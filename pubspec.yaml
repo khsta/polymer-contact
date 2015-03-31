@@ -1,0 +1,13 @@
+name: contacts
+version: 0.0.7
+author: khaoula statoua <khaoula.statoua@gmail.com>
+description: Polymer application with web links.
+homepage: http://ondart.me/
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  polymer: '>=0.15.4 <0.16.0'
+transformers:
+- polymer:
+    entry_points: web/index.html

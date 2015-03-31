@@ -1,0 +1,87 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<polymer-element name="contact-list">
+  <template>
+    <style>
+      ul {
+        list-style: none;
+        padding: 2px;
+        text-align: left;
+      }
+      li {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 18px;
+      }
+      a:link {
+        text-decoration: none;
+        font-weight: bold;
+        color: #003366;
+      }
+      a:visited {
+        text-decoration: none;
+        font-weight: bold;
+        color: #c50000;
+      }
+      a:hover {
+        text-decoration: none;
+        color: #d9ece2;
+        background: #663117;
+      }
+      .button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+    <h2>Contacts</h2>
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text"/>
+      <label for="email">Email</label>
+      <input id="email" type="text"/>
+      <label for="email">Adress</label>
+      <input id="adress" type="text"/>
+      
+      <button on-click="{{add}}" class="button">Ajout</button>
+      <button on-click="{{modifiercontact}}" class="button">Mettre à jour</button>
+     
+      <br/>
+      <label id="message"></label>
+    </div>
+  <table>
+     
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Adresse</th>
+        
+        <th>Effacer</th>
+      </tr>
+      <tbody template repeat="{{contact in contacts.internalList}}">
+        <tr>
+          <td>
+            
+              {{contact.name}}
+           
+          </td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.adress}}</td>
+          
+          <td><button  class="button" on-click="{{effacer}}" email-contact={{contact.email}}>Effacer</button></td>
+       <td><button  class="button" on-click="{{miseajour}}" email-contact={{contact.email}}>Cliquer pour mettre à jour</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+   
+      </template>
+    
+  </template>
+  <script type="application/dart" src="contact_list.dart"></script>
+</polymer-element>
